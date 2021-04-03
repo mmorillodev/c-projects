@@ -6,15 +6,15 @@ typedef unsigned char uchar;
 
 int main()
 {
-  uchar nDesEdrv[] = {0,1,0,0,0,1,1,1}; 
+  uchar bits[] = {0,1,0,0,0,1,1,1}; 
 
-  int recivedID = 0;
-  for (int i = 0, j = sizeof(nDesEdrv)/sizeof(bool); i < 8; i++, j--)
+  int output = 0;
+  for (int i = 0, j = sizeof(bits)/sizeof(bool); i < 8; i++, j--)
   {
-    recivedID |= nDesEdrv[i] << j - 1;
+    output |= bits[i] << j - 1;
   }
 
-  cout << recivedID << endl;
+  cout << output << endl;
 
   return 0;
 }
