@@ -4,14 +4,17 @@ using namespace std;
 
 typedef unsigned char uchar;
 
-int main()
-{
-  uchar bits[] = {0,1,0,0,0,1,1,1}; 
+int main() {
+  uchar bits[] = {1, 1, 1, 1, 1, 1, 1, 1}; 
 
   int output = 0;
-  for (int i = 0, j = sizeof(bits)/sizeof(bool); i < 8; i++, j--)
-  {
-    output |= bits[i] << j - 1;
+
+  int i = 0;
+  int j = sizeof(bits)/sizeof(uchar) - 1;
+  while (i < 8) {
+    output |= bits[i] << j;
+    i++;
+    j--;
   }
 
   cout << output << endl;
